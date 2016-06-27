@@ -20,18 +20,33 @@
         <h1>UTSW Network Proxy Link</h1>
         <p></p>
         <p class="view"><a href="https://github.com/bnanes/utsw-network-proxy">View the Project on GitHub <small>bnanes/utsw-network-proxy</small></a></p>
-        <ul>
-          <li><a href="https://github.com/bnanes/utsw-network-proxy/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/bnanes/utsw-network-proxy/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/bnanes/utsw-network-proxy">View On <strong>GitHub</strong></a></li>
-        </ul>
       </header>
       <section>
         <p>You can use the UTSW network proxy (<code>https://myutsouthwestern.swmed.edu</code>) to access subscription-only journal articles from any computer.</p>
 
 <ol>
 <li><p>Bookmark this link (don't click on it yet):<br>
-UTSW Proxy Link</p></li>
+<a href='javascript:
+var proxyPrefix = "https://myutsouthwestern.swmed.edu/";
+var proxyInfixA = ",DanaInfo=";
+var proxyInfixB = "+";
+function proxifyUrl(url) {
+  var r1 = "";
+  var r2 = "";
+  var s = url.split("/");
+  if(s.length < 3) throw new Error("Bad URL");
+  s.shift();
+  s.shift();
+  r1 += proxyInfixA + s.shift() + "+" + s.pop();
+  console.log(r1);
+  r2 +=  proxyPrefix;  
+  s.forEach(function(ss) {  
+    r2 += ss + "/";
+  });
+  return r2 + r1;
+};
+document.location.assign(proxifyUrl(location.href));
+'>UTSW Proxy Link</a></p></li>
 <li><p>Navigate to the article you want to read.</p></li>
 <li><p>Select the bookmark from your bookmarks menu or toolbar.</p></li>
 <li><p>Log in with your UTSW network credentials.</p></li>
