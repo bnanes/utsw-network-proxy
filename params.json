@@ -1,0 +1,6 @@
+{
+  "name": "UTSW Network Proxy Link",
+  "tagline": "",
+  "body": "You can use the UTSW network proxy (`https://myutsouthwestern.swmed.edu`) to access subscription-only journal articles from any computer.\r\n\r\n1.  Bookmark this link (don't click on it yet):     \r\n<a href='javascript:\r\nvar proxyPrefix = \"https://myutsouthwestern.swmed.edu/\";\r\nvar proxyInfixA = \",DanaInfo=\";\r\nvar proxyInfixB = \"+\";\r\nfunction proxifyUrl(url) {\r\n  var r1 = \"\";\r\n  var r2 = \"\";\r\n  var s = url.split(\"/\");\r\n  if(s.length < 3) throw new Error(\"Bad URL\");\r\n  s.shift();\r\n  s.shift();\r\n  r1 += proxyInfixA + s.shift() + \"+\" + s.pop();\r\n  console.log(r1);\r\n  r2 +=  proxyPrefix;  \r\n  s.forEach(function(ss) {  \r\n    r2 += ss + \"/\";\r\n  });\r\n  return r2 + r1;\r\n};\r\ndocument.location.assign(proxifyUrl(location.href));\r\n'>UTSW Proxy Link</a>\r\n\r\n2.  Navigate to the article you want to read.\r\n\r\n3.  Select the bookmark from your bookmarks menu or toolbar.\r\n\r\n4.  Log in with your UTSW network credentials.\r\n\r\n5.  Read the article.\r\n\r\nThis should work with any browser on a computer or mobile device. If not, let me know.\r\n\r\n-- BN\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
